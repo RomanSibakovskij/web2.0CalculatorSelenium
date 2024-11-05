@@ -8,23 +8,23 @@ public class TestDataGenerator extends BasePage{
 
     private static final int MIN = 1;
     private static final int MAX = 2500;
-
+    //positive numbers (for division)
     private static final int DIVISION_MIN = 1;
     private static final int DIVISION_MAX = 200;
-
+    //negative numbers
     private static final int MIN_NEGATIVE = -1000;
     private static final int MAX_NEGATIVE = -2;
-
+    //for negative division ops
     private static final int DIVISION_NEGATIVE_MIN = -300;
     private static final int DIVISION_NEGATIVE_MAX = -1;
-
+    //for power calculations
     private static final int POWER_MIN = 1;
     private static final int POWER_MAX = 10;
 
     //for aCot
     private static final int INPUT_ACOT_MAX = 60;
     private static final int INPUT_ACOT_MIN = 2;
-
+    //for nCr
     private static final int NCR_MAX = 50;
     private static final int NCR_MIN = 1;
 
@@ -78,11 +78,6 @@ public class TestDataGenerator extends BasePage{
 
     // Generate random number (for atanh calculations)
     public double generateRandomATanHInputNumber(){funcNum1 = 0.01 + (0.99 - 0.01) * random.nextDouble(); return funcNum1;}
-
-    public double generateRandomATanHNegativeInputNumber() {
-        double num1 = -0.01 * Math.random(); // Generates a value between -0.01 and -1
-        return num1;
-    }
 
     // Generate random number (for aCot calculations)
     public int generateRandomACotInputNumber(){num1 = random.nextInt((INPUT_ACOT_MAX - INPUT_ACOT_MIN) + 1) + INPUT_ACOT_MIN; return num1;}
