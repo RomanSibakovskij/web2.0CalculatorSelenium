@@ -20,9 +20,6 @@ public class TestDataGenerator extends BasePage{
 
     private static final int POWER_MIN = 1;
     private static final int POWER_MAX = 10;
-    //for aTanH
-    private static final double INPUT_MAX = 0.9;
-    private static final double INPUT_MIN = 0.1;
 
     //for aCot
     private static final int INPUT_ACOT_MAX = 60;
@@ -41,7 +38,6 @@ public class TestDataGenerator extends BasePage{
 
     //input numbers (for atanh / asin / acos)
     private double funcNum1;
-    private double funcNum2;
 
     //negative input numbers
     private int negativeNum1;
@@ -90,15 +86,4 @@ public class TestDataGenerator extends BasePage{
 
     // Generate random number (for aCot calculations)
     public int generateRandomACotInputNumber(){num1 = random.nextInt((INPUT_ACOT_MAX - INPUT_ACOT_MIN) + 1) + INPUT_ACOT_MIN; return num1;}
-
-    // Getters
-    public int getNum1() { return num1; }
-    public int getNum2() { return num2; }
-
-    //Negative number getters
-    public int getNegativeNum1() { return negativeNum1; }
-    public int getNegativeNum2() { return negativeNum2; }
-
-
-
 }

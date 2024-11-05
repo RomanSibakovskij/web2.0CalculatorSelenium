@@ -86,15 +86,6 @@ public class CalculatorPage extends BasePage{
     //dropdown menu 2 (has the same dropdown menu buttons as first)
     @FindBy(xpath = "//button[@id='BtnOpD2']")
     private WebElement dropdown2Btn;
-    //dropdown 1 menu buttons
-    @FindBy(xpath = "//button[@id='ButtonLn']")
-    private WebElement naturalLogBtn;
-    @FindBy(xpath = "//button[@id='ButtonExp']")
-    private WebElement expBtn;
-    @FindBy(xpath = "//button[@id='ButtonLg2']")
-    private WebElement logBase2Btn;
-    @FindBy(xpath = "//button[@id='Button2X']")
-    private WebElement power2DropdownBtn;
     //keypad buttons
     @FindBy(xpath = "//button[@id='Btn0']")
     private WebElement zeroBtn;

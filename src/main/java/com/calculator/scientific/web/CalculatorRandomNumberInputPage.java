@@ -17,9 +17,8 @@ public class CalculatorRandomNumberInputPage extends CalculatorPage{
     private int numberOne;
     private int numberTwo;
 
-    //valid input data
+    //valid input data (for atanh /asin/ acos functions)
     private double funcNumberOne;
-    private double funcNumberTwo;
 
     //negative numbers
     private int negativeNumberOne;
@@ -79,12 +78,6 @@ public class CalculatorRandomNumberInputPage extends CalculatorPage{
 
         numberOne = testDataGenerator.generateRandomDivisionNumber1();
         negativeNumberTwo = testDataGenerator.generateRandomDivisionNegativeNumber2();
-
-//        if (numberOne < negativeNumberTwo) {
-//            int temp = numberOne;
-//            numberOne = negativeNumberTwo;
-//            negativeNumberTwo = temp;
-//        }
 
         System.out.println("Data generated for division: " + "\n");
         logger.info("Number one (for negative division): " + numberOne);

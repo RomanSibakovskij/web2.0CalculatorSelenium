@@ -9,11 +9,6 @@ import java.time.Duration;
 
 public class CalculatorNumPadInput extends CalculatorPage{
 
-    //calculator page web elements
-    @FindBy(xpath = "//input[@id='input']")
-    private WebElement numberInputField;
-    @FindBy(xpath = "//div[@id='inputhelper']")
-    private WebElement numberInputHelperButton;
     //calculator keyboard input web element
     //first button row
     @FindBy(xpath = "//div[@id='btns']//button[@id='Btn2nd']")
@@ -26,16 +21,6 @@ public class CalculatorNumPadInput extends CalculatorPage{
     private WebElement matrixBtn;
     @FindBy(xpath = "//div[@id='btns']//button[@id='BtnVar']")
     private WebElement varBtn;
-    @FindBy(xpath = "//div[@id='btns']//button[@id='BtnParanL']")
-    private WebElement leftParenthesisBtn;
-    @FindBy(xpath = "//div[@id='btns']//button[@id='BtnColon']")
-    private WebElement colonBtn;
-    @FindBy(xpath = "//div[@id='btns']//button[@id='BtnParanR']")
-    private WebElement rightParenthesisBtn;
-    @FindBy(xpath = "//div[@id='btns']//button[@id='BtnLeft']")
-    private WebElement leftArrowBtn;
-    @FindBy(xpath = "//div[@id='btns']//button[@id='BtnBack']")
-    private WebElement backspaceBtn;
     //second button row
     @FindBy(xpath = "//button[@id='BtnSin']")
     private WebElement sinBtn;
@@ -83,9 +68,6 @@ public class CalculatorNumPadInput extends CalculatorPage{
     //dropdown buttons
     @FindBy(xpath = "//button[@id='BtnOpD1']")
     private WebElement dropdown1Btn;
-    //dropdown menu 2 (has the same dropdown menu buttons as first)
-    @FindBy(xpath = "//button[@id='BtnOpD2']")
-    private WebElement dropdown2Btn;
     //dropdown 1 menu buttons
     @FindBy(xpath = "//button[@id='ButtonLn']")
     private WebElement naturalLogBtn;
@@ -128,34 +110,13 @@ public class CalculatorNumPadInput extends CalculatorPage{
     private WebElement multiplyBtn;
     @FindBy(xpath = "//button[@id='BtnDiv']")
     private WebElement divideBtn;
-    @FindBy(xpath = "//button[@id='BtnClear']")
-    private WebElement clearBtn;
     @FindBy(css = "#BtnCalc")
     private WebElement equalsBtn;
     @FindBy(xpath = "//button[@id='BtnCalcEqual']")
     private WebElement equationEqualsBtn;
     //options buttons row
-    @FindBy(xpath = "//div[@class='options']/label[@title='Degree']")
-    private WebElement degreeBtn;
-    @FindBy(xpath = "//div[@class='options']/label[@title='Radian']")
-    private WebElement radianBtn;
     @FindBy(xpath = "//div[@class='options']/div[@id='hist']")
     private WebElement historyBtn;
-    //history log web element
-    @FindBy(xpath = "//div[@id='histframe']/ul/li/p[@class='r']")
-    private WebElement calculationResultLog;
-    //additional buttons web elements
-    @FindBy(xpath = "//div[@class='options']/button[1]")
-    private WebElement scrollDownBtn;
-    @FindBy(xpath = "//div[@class='options']/button[2]")
-    private WebElement scrollUpBtn;
-    @FindBy(xpath = "//div[@class='options']/button[@id='addclipboard']")
-    private WebElement addClipboardBtn;
-    @FindBy(xpath = "//div[@class='options']/a")
-    private WebElement drawGraphBtn;
-    //browse questions button
-    @FindBy(xpath = "//div[@class='row']//form/button[@type='submit']")
-    private WebElement browseQuestionsBtn;
     //constants modal web elements
     @FindBy(xpath = "//input[@id='inputName']")
     private WebElement constantNameInputField;
@@ -163,8 +124,6 @@ public class CalculatorNumPadInput extends CalculatorPage{
     private WebElement constantValueInputField;
     @FindBy(xpath = "//input[@class='form-control unit']")
     private WebElement constantFormControlUnitInputField;
-    @FindBy(xpath = "//select[@id='constantslist']")
-    private WebElement constantsList;
     @FindBy(xpath = "//select[@id='constantslist']/option[@value='96485.3365  [C mol^-1]']")
     private WebElement faradayConstant;
     @FindBy(xpath = "//button[@class='insert btn btn-primary pull-right']")

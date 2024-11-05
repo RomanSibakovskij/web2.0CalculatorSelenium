@@ -229,11 +229,10 @@ public class TestMethods extends BaseTest{
         double expectedResult = (double)number1 / (double) number2;
         //assert the result matches the expected result in the log
         String rawResult = calculatorPage.getCalculationResult();
-        logger.info("Raw result string: " + rawResult); //logs the raw string output
         double actualResult = Double.parseDouble(rawResult);
-        logger.info("Expected division result: " + expectedResult);
-        logger.info("Actual division result: " + actualResult);
         final double TOLERANCE = 0.001;
+        //log the results
+        logCalculationResult(calculatorPage);
         //log the issue if there are any discrepancies in the results
         if (Math.abs(expectedResult - actualResult) > TOLERANCE) {
             logger.error("The calculator actual random number division result has discrepancies from the expected result. Expected result: " + expectedResult + ", Actual result: " + actualResult);
@@ -578,7 +577,7 @@ public class TestMethods extends BaseTest{
         //result logger
         logCalculationResult(calculatorPage);
         // calculation verification (in app)
-        double innerResult = Math.pow(10, 5);;
+        double innerResult = Math.pow(10, 5);
         double actualResult = Double.parseDouble(calculatorPage.getCalculationResult());
         double tolerance = 0.0001;
         assertEquals(innerResult, actualResult, tolerance, "Calculation results do not match");
@@ -630,7 +629,7 @@ public class TestMethods extends BaseTest{
         //result logger
         logCalculationResult(calculatorPage);
         // calculation verification (in app)
-        double innerResult = Math.pow(107, 2);;
+        double innerResult = Math.pow(107, 2);
         double actualResult = Double.parseDouble(calculatorPage.getCalculationResult());
         double tolerance = 0.0001;
         assertEquals(innerResult, actualResult, tolerance, "Calculation results do not match");
@@ -786,7 +785,7 @@ public class TestMethods extends BaseTest{
         //result logger
         logCalculationResult(calculatorPage);
         // calculation verification (in app)
-        double innerResult = Math.pow(157, 3);;
+        double innerResult = Math.pow(157, 3);
         double actualResult = Double.parseDouble(calculatorPage.getCalculationResult());
         double tolerance = 0.0001;
         assertEquals(innerResult, actualResult, tolerance, "Calculation results do not match");
@@ -852,7 +851,7 @@ public class TestMethods extends BaseTest{
         calculatorPage.clickConsentButton();
         //web element assert
         isCalculatorPageWebElementDisplayed(calculatorPage);
-        //input data getter to calculate y-th root of input number)
+        //input data getter (to calculate y-th root of input number)
         calculatorRandomNumberInputPage.inputSingleNumberDataGetter();
         //input random test number (for 'to calculate y-th root of input number' calculation)
         calculatorRandomNumberInputPage.inputNumberOne();
@@ -907,7 +906,7 @@ public class TestMethods extends BaseTest{
         calculatorPage.clickConsentButton();
         //web element assert
         isCalculatorPageWebElementDisplayed(calculatorPage);
-        //input data getter to calculate y-th root of input number)
+        //input data getter (to calculate y-th root of input number)
         calculatorRandomNumberInputPage.inputSingleNumberDataGetter();
         //input random test number (for 'to calculate y-th root of input number' calculation)
         calculatorRandomNumberInputPage.inputNumberOne();
@@ -1216,7 +1215,7 @@ public class TestMethods extends BaseTest{
         //result logger
         logCalculationResult(calculatorPage);
         // calculation verification (in app)
-        double innerResult = Math.pow(10, -5);;
+        double innerResult = Math.pow(10, -5);
         double actualResult = Double.parseDouble(calculatorPage.getCalculationResult());
         double tolerance = 0.0001;
         assertEquals(innerResult, actualResult, tolerance, "Calculation results do not match");
@@ -1439,7 +1438,7 @@ public class TestMethods extends BaseTest{
         //result logger
         logCalculationResult(calculatorPage);
         // calculation verification (in app)
-        double innerResult = Math.pow(-57, 3);;
+        double innerResult = Math.pow(-57, 3);
         double actualResult = Double.parseDouble(calculatorPage.getCalculationResult());
         double tolerance = 0.0001;
         assertEquals(innerResult, actualResult, tolerance, "Calculation results do not match");
@@ -2386,7 +2385,6 @@ public class TestMethods extends BaseTest{
         // calculation verification (in app)
         int innerResult = calculatorPage.calculatePercentageInput(2);
         int actualResult = Integer.parseInt(calculatorPage.getCalculationResult());
-        double tolerance = 0.0001;
         assertEquals(innerResult, actualResult, "Calculation results do not match");
     }
     //calculate percentage equivalent of input random number test method (with random number input)
@@ -2412,7 +2410,6 @@ public class TestMethods extends BaseTest{
         // calculation verification (in app)
         int innerResult = calculatorPage.calculatePercentageInput(calculatorRandomNumberInputPage.getNumberOne());
         int actualResult = Integer.parseInt(calculatorPage.getCalculationResult());
-        double tolerance = 0.0001;
         assertEquals(innerResult, actualResult, "Calculation results do not match");
     }
 
@@ -2923,9 +2920,6 @@ public class TestMethods extends BaseTest{
         calculatorNumPadInput.clickHistoryDropdownButton();
         //result logger
         logCalculationResult(calculatorPage);
-        // calculation verification (in app)
-        BigInteger innerResult = calculatorPage.calculateCombination(-13, -7);
-        BigInteger actualResult = new BigInteger(calculatorPage.getCalculationResult());
         //assert the IllegalArgumentException is thrown (since this operation is invalid)
         assertThrows(IllegalArgumentException.class, () -> {
             calculatorPage.calculateCombination(-13, -7);
@@ -2953,9 +2947,6 @@ public class TestMethods extends BaseTest{
         calculatorNumPadInput.clickHistoryDropdownButton();
         //result logger
         logCalculationResult(calculatorPage);
-        // calculation verification (in app)
-        BigInteger innerResult = calculatorPage.calculateCombination(calculatorRandomNumberInputPage.getNegativeNumberOne(), calculatorRandomNumberInputPage.getNegativeNumberTwo());
-        BigInteger actualResult = new BigInteger(calculatorPage.getCalculationResult());
         //assert the IllegalArgumentException is thrown (since this operation is invalid)
         assertThrows(IllegalArgumentException.class, () -> {
             calculatorPage.calculateCombination(calculatorRandomNumberInputPage.getNegativeNumberOne(), calculatorRandomNumberInputPage.getNegativeNumberTwo());
